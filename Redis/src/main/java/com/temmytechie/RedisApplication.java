@@ -46,7 +46,7 @@ public class RedisApplication {
 	 * 
 	 * @param id
 	 * @return
-	 * only get from cache unless result.price > 200 
+	 * only fetch result from cache unless result.price > 500 
 	 */
 	@GetMapping("/{id}")
 	@Cacheable(key="#id",value = "product",unless = "#result.price > 500" )
